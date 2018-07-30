@@ -1,0 +1,39 @@
+logging:
+#  level: info
+#  path: opsdroid.log
+  console: true
+
+welcome-message: true
+
+
+connectors:
+#  - name: telegram
+  # required
+ #   token: "673918415:AAGlPsWiIRVlOBCWr3IrBKCgWJ-clg3c1hU"
+  # optional
+#    update_interval: 0.5  # Interval between checking for messages
+ #   default_user: KamillaCosta  # Default user to send messages to (overrides default room in connector)
+  #  whitelisted_users:  # List of users who can speak to the bot, if not set anyone can speak
+   #   - KamillaCosta
+    #  - gabibguedes
+  - name: websocket
+  #- name: shell
+   # bot-name: "gamora"
+
+
+skills:
+
+  ## Hello world (https://github.com/opsdroid/skill-hello)
+  - name: hello
+
+  ## Last seen (https://github.com/opsdroid/skill-seen)
+  - name: seen
+
+  ## Dance (https://github.com/opsdroid/skill-dance)
+  - name: dance
+
+  ## Loud noises (https://github.com/opsdroid/skill-loudnoises)
+  - name: loudnoises
+
+  - name: myfirstskill
+    path: /home/kahcosta/chatops/skills/myfirstskill

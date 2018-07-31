@@ -130,18 +130,18 @@ connectors:
 #    bot-name: "mybot" # default "opsdroid"
 #
 #  ## Slack (https://github.com/opsdroid/connector-slack)
-#  - name: slack
-#    # required
-#    api-token: "zyxw-abdcefghi-12345"
+  - name: slack
+   # required
+    api-token: "xoxb-407981957860-407519875296-zQieQTcxGb0eMudsUB5pbehC"
 #    # optional
 #    bot-name: "mybot" # default "opsdroid"
 #    default-room: "#random" # default "#general"
 #    icon-emoji: ":smile:" # default ":robot_face:"
 #
 #  ## Telegram (https://github.com/opsdroid/connector-telegram)
-#  - name: telegram
-#    # required
-#    token: "673918415:AAGlPsWiIRVlOBCWr3IrBKCgWJ-clg3c1hU"  # Telegraf bot token
+  # - name: telegram
+  #  # required
+  #   token: "673918415:AAGlPsWiIRVlOBCWr3IrBKCgWJ-clg3c1hU"  # Telegraf bot token
 #    # optional
 #    update_interval: 0.5  # Interval between checking for messages
 #    default_user: user1  # Default user to send messages to (overrides default room in connector)

@@ -2,6 +2,26 @@
   "rasa_nlu_data": {
     "common_examples": [
       {
+        "text": "list issues", 
+        "intent": "list_issues"
+      }, 
+      {
+        "text": "issues", 
+        "intent": "list_issues"
+      }, 
+      {
+        "text": "list", 
+        "intent": "list_issues"
+      }, 
+      {
+        "text": "github", 
+        "intent": "list_issues"
+      }, 
+      {
+        "text": "git", 
+        "intent": "list_issues"
+      }, 
+      {
         "text": "hey", 
         "intent": "greet"
       }, 

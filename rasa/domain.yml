@@ -1,3 +1,7 @@
+slots:
+  issues:
+    type: list
+
 intents:
   - greet
   - goodbye
@@ -12,6 +16,7 @@ actions:
 - utter_did_that_help
 - utter_happy
 - utter_goodbye
+- actions.ActionListIssues
 
 templates:
   utter_greet:
@@ -21,7 +26,9 @@ templates:
       payload: "great"
     - title: "super sad"
       payload: "super sad"
-
+    - title: "list issues"
+      payload: "list issues"
+ 
   utter_cheer_up:
   - text: "Here is something to cheer you up:"
     image: "https://i.imgur.com/nGF1K8f.jpg"

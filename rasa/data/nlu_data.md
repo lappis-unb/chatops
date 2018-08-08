@@ -1,3 +1,10 @@
+## intent:list_issues
+- list issues
+- issues
+- list
+- github
+- git
+
 ## intent:greet
 - hey
 - hello

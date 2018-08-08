@@ -25,3 +25,9 @@
 ## say goodbye
 * goodbye
   - utter_goodbye
+
+## issues path
+* greet
+  - utter_greet
+* list_issues
+  - action_list_issues

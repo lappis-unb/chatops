@@ -5,12 +5,14 @@ action_names:
 - utter_did_that_help
 - utter_happy
 - utter_goodbye
+- action_list_issues
 actions:
 - utter_greet
 - utter_cheer_up
 - utter_did_that_help
 - utter_happy
 - utter_goodbye
+- actions.ActionListIssues
 config:
   store_entities_as_slots: true
 entities: []
@@ -27,7 +29,10 @@ intents:
     use_entities: true
 - mood_affirm:
     use_entities: true
-slots: {}
+slots:
+  issues:
+    initial_value: null
+    type: rasa_core.slots.ListSlot
 templates:
   utter_cheer_up:
   - image: https://i.imgur.com/nGF1K8f.jpg
@@ -42,6 +47,8 @@ templates:
       title: great
     - payload: super sad
       title: super sad
+    - payload: list issues
+      title: list issues
     text: Hey! How are you?
   utter_happy:
   - text: Great carry on!

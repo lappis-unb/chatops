@@ -3,6 +3,9 @@
     "utter_goodbye": {
       "slots": []
     }, 
+    "action_list_issues": {
+      "slots": []
+    }, 
     "utter_happy": {
       "slots": []
     }, 

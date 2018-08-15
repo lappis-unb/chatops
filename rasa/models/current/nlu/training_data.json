@@ -6,10 +6,6 @@
         "intent": "list_issues"
       }, 
       {
-        "text": "issues", 
-        "intent": "list_issues"
-      }, 
-      {
         "text": "list", 
         "intent": "list_issues"
       }, 
@@ -20,6 +16,18 @@
       {
         "text": "git", 
         "intent": "list_issues"
+      }, 
+      {
+        "text": "create", 
+        "intent": "create_issue"
+      }, 
+      {
+        "text": "create issue", 
+        "intent": "create_issue"
+      }, 
+      {
+        "text": "new issue", 
+        "intent": "create_issue"
       }, 
       {
         "text": "hey", 

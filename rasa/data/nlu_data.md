@@ -1,9 +1,13 @@
 ## intent:list_issues
 - list issues
-- issues
 - list
 - github
 - git
+
+## intent:create_issue
+- create
+- create issue
+- new issue
 
 ## intent:greet
 - hey

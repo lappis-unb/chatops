@@ -11,6 +11,9 @@
     }, 
     "action_listen": {
       "slots": []
+    }, 
+    "action_create_issue": {
+      "slots": []
     }
   }, 
   "policy_names": [

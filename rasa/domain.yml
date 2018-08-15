@@ -17,18 +17,18 @@ actions:
 - utter_happy
 - utter_goodbye
 - actions.ActionListIssues
+- actions.ActionCreateIssues
 
 templates:
   utter_greet:
-  - text: "Hey! How are you?"
+  - text: "Hey! How can I help you?"
+  - text: "I'm a chatops with github integration, what would you like to do? List the open issues on the repo or create a new issue?"
     buttons:
-    - title: "great"
-      payload: "great"
-    - title: "super sad"
-      payload: "super sad"
     - title: "list issues"
       payload: "list issues"
- 
+    - title: "create new issue"
+      payload: "create issue"
+
   utter_cheer_up:
   - text: "Here is something to cheer you up:"
     image: "https://i.imgur.com/nGF1K8f.jpg"

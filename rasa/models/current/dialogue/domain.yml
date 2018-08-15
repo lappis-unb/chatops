@@ -6,6 +6,7 @@ action_names:
 - utter_happy
 - utter_goodbye
 - action_list_issues
+- action_create_issue
 actions:
 - utter_greet
 - utter_cheer_up
@@ -13,6 +14,7 @@ actions:
 - utter_happy
 - utter_goodbye
 - actions.ActionListIssues
+- actions.ActionCreateIssues
 config:
   store_entities_as_slots: true
 entities: []
@@ -43,12 +45,14 @@ templates:
   - text: Bye
   utter_greet:
   - buttons:
-    - payload: great
-      title: great
-    - payload: super sad
-      title: super sad
     - payload: list issues
       title: list issues
-    text: Hey! How are you?
+    - payload: create issue
+      title: create new issue
+    text: 'Hey! How can I help you?
+
+
+      I''m a chatops with github integration, what would you like to do? List the
+      open issues on the repo or create a new issue?'
   utter_happy:
   - text: Great carry on!

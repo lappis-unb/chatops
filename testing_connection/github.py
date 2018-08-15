@@ -1,8 +1,6 @@
 import json
 import requests
 
-
-
 def list_issues():
 	response = requests.get("https://api.github.com/repos/gabibguedes/teste/issues")
 	api_list = response.json()
@@ -17,7 +15,7 @@ def create_issue():
 	issue = {'title': 'new bot issue (' + str(response1.json()[0]["number"]+1)+')', 'body': 'hello github'}
 
 	response = requests.post('https://api.github.com/repos/gabibguedes/teste/issues',
-	headers = {'Authorization': 'token 1fb78288a200219b9ef664f8598d82c3e8242c4e'},
+	headers = {'Authorization': 'token [PLACE HERE YOUR GITHUB TOKEN]'},
 	data = json.dumps(issue))
 	message = 'New Issue Created \n' + '#'+ str(response.json()["number"]) + ' ' + response.json()["title"] + '\n' + response.json()["body"] + '\n' + response.json()["html_url"]
 	return message

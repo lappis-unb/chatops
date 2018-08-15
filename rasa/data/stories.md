@@ -31,3 +31,17 @@
   - utter_greet
 * list_issues
   - action_list_issues
+
+## create issues path
+* greet
+  - utter_greet
+* create_issues
+  - action_create_issue
+
+## ask for issues
+* list_issues
+  - action_list_issues
+
+## create new issue
+* create_issue
+  - action_create_issue

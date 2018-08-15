@@ -15,6 +15,7 @@
     "prev_utter_did_that_help", 
     "prev_utter_happy", 
     "prev_utter_goodbye", 
-    "prev_action_list_issues"
+    "prev_action_list_issues", 
+    "prev_action_create_issue"
   ]
 }

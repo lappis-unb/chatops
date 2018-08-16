@@ -6,7 +6,8 @@
     "intent_mood_deny", 
     "intent_mood_great", 
     "intent_mood_unhappy", 
-    "slot_issues_0", 
+    "slot_issue_body_0", 
+    "slot_issue_name_0", 
     "prev_action_listen", 
     "prev_action_restart", 
     "prev_action_default_fallback", 
@@ -15,7 +16,11 @@
     "prev_utter_did_that_help", 
     "prev_utter_happy", 
     "prev_utter_goodbye", 
+    "prev_utter_ask_issue_name", 
+    "prev_utter_ask_issue_body", 
     "prev_action_list_issues", 
-    "prev_action_create_issue"
+    "prev_action_create_issue", 
+    "prev_action_set_issue_name", 
+    "prev_action_set_issue_body"
   ]
 }

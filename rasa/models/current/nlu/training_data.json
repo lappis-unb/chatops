@@ -280,6 +280,14 @@
       {
         "text": "so sad", 
         "intent": "mood_unhappy"
+      }, 
+      {
+        "text": "/name", 
+        "intent": "answer_name"
+      }, 
+      {
+        "text": "/body", 
+        "intent": "answer_body"
       }
     ], 
     "entity_synonyms": [], 

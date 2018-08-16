@@ -3,16 +3,16 @@
     "utter_goodbye": {
       "slots": []
     }, 
-    "action_list_issues": {
+    "action_create_issue": {
       "slots": []
     }, 
     "utter_happy": {
       "slots": []
     }, 
-    "action_listen": {
+    "action_list_issues": {
       "slots": []
     }, 
-    "action_create_issue": {
+    "action_listen": {
       "slots": []
     }
   }, 

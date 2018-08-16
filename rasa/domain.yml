@@ -1,6 +1,10 @@
 slots:
-  issues:
-    type: list
+  issue_name:
+    type: text
+    initial_value: "issue bot"
+  issue_body:
+    type: text
+    initial_value: "this is an issue"
 
 intents:
   - greet
@@ -16,13 +20,16 @@ actions:
 - utter_did_that_help
 - utter_happy
 - utter_goodbye
+- utter_ask_issue_name
+- utter_ask_issue_body
 - actions.ActionListIssues
 - actions.ActionCreateIssues
+- actions.ActionSetIssueName
+- actions.ActionSetIssueBody
 
 templates:
   utter_greet:
-  - text: "Hey! How can I help you?"
-  - text: "I'm a chatops with github integration, what would you like to do? List the open issues on the repo or create a new issue?"
+  - text: "Hey! How can I help you? I'm a chatops with github integration, what would you like to do? List the open issues on the repo or create a new issue?"
     buttons:
     - title: "list issues"
       payload: "list issues"
@@ -41,3 +48,9 @@ templates:
 
   utter_goodbye:
   - text: "Bye"
+
+  utter_ask_issue_name:
+    - text: "What will be the name of the issue? Write /name followed by the chosen name"
+
+  utter_ask_issue_body:
+    - text: "What will be the content of the issue? Write /body followed by the chosen content"

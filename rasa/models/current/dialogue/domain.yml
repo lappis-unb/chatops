@@ -5,16 +5,24 @@ action_names:
 - utter_did_that_help
 - utter_happy
 - utter_goodbye
+- utter_ask_issue_name
+- utter_ask_issue_body
 - action_list_issues
 - action_create_issue
+- action_set_issue_name
+- action_set_issue_body
 actions:
 - utter_greet
 - utter_cheer_up
 - utter_did_that_help
 - utter_happy
 - utter_goodbye
+- utter_ask_issue_name
+- utter_ask_issue_body
 - actions.ActionListIssues
 - actions.ActionCreateIssues
+- actions.ActionSetIssueName
+- actions.ActionSetIssueBody
 config:
   store_entities_as_slots: true
 entities: []
@@ -32,10 +40,18 @@ intents:
 - mood_affirm:
     use_entities: true
 slots:
-  issues:
-    initial_value: null
-    type: rasa_core.slots.ListSlot
+  issue_body:
+    initial_value: this is an issue
+    type: rasa_core.slots.TextSlot
+  issue_name:
+    initial_value: issue bot
+    type: rasa_core.slots.TextSlot
 templates:
+  utter_ask_issue_body:
+  - text: What will be the content of the issue? Write /body followed by the chosen
+      content
+  utter_ask_issue_name:
+  - text: What will be the name of the issue? Write /name followed by the chosen name
   utter_cheer_up:
   - image: https://i.imgur.com/nGF1K8f.jpg
     text: 'Here is something to cheer you up:'
@@ -49,10 +65,7 @@ templates:
       title: list issues
     - payload: create issue
       title: create new issue
-    text: 'Hey! How can I help you?
-
-
-      I''m a chatops with github integration, what would you like to do? List the
-      open issues on the repo or create a new issue?'
+    text: Hey! How can I help you? I'm a chatops with github integration, what would
+      you like to do? List the open issues on the repo or create a new issue?
   utter_happy:
   - text: Great carry on!

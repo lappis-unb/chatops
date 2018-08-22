@@ -1,3 +1,6 @@
+# Telegram credentials must be ignored because updating this file is unnecessary
+*telegram_credentials.yml
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

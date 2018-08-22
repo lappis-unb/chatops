@@ -2,10 +2,6 @@
 * greet              
   - utter_greet
 
-## say goodbye
-* goodbye
-  - utter_goodbye
-
 ## ask for issues
 * list_issues
   - action_list_issues
@@ -19,3 +15,7 @@
 * answer_body
   - action_set_issue_body
   - action_create_issue
+
+## say goodbye
+* goodbye
+  - utter_goodbye

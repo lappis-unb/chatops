@@ -1,12 +1,12 @@
 {
   "action_fingerprints": {
+    "utter_greet": {
+      "slots": []
+    }, 
     "utter_goodbye": {
       "slots": []
     }, 
     "action_create_issue": {
-      "slots": []
-    }, 
-    "utter_happy": {
       "slots": []
     }, 
     "action_list_issues": {

@@ -9,16 +9,13 @@ slots:
 intents:
   - greet
   - goodbye
-  - mood_affirm
-  - mood_deny
-  - mood_great
-  - mood_unhappy
+  - list_issues
+  - create_issue
+  - answer_name
+  - answer_body
 
 actions:
 - utter_greet
-- utter_cheer_up
-- utter_did_that_help
-- utter_happy
 - utter_goodbye
 - utter_ask_issue_name
 - utter_ask_issue_body
@@ -35,16 +32,6 @@ templates:
       payload: "list issues"
     - title: "create new issue"
       payload: "create issue"
-
-  utter_cheer_up:
-  - text: "Here is something to cheer you up:"
-    image: "https://i.imgur.com/nGF1K8f.jpg"
-
-  utter_did_that_help:
-  - text: "Did that help you?"
-
-  utter_happy:
-  - text: "Great carry on!"
 
   utter_goodbye:
   - text: "Bye"

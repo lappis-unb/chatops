@@ -3,8 +3,11 @@ import requests
 from rasa_core.actions import Action
 from rasa_core.events import SlotSet
 
-API_URL = "https://api.github.com/repos/gabibguedes/teste/issues"
-URL = "https://github.com/gabibguedes/teste"
+API_URL = "https://api.github.com/repos/lappis-unb/rouana/issues"
+URL = "https://github.com/lappis-unb/rouana"
+
+API_URL_TESTE = "https://api.github.com/repos/gabibguedes/teste/issues"
+URL_TESTE = "https://github.com/gabibguedes/teste"
 
 class ActionListIssues():
 	def name(self):
@@ -34,7 +37,7 @@ class ActionCreateIssues():
 		body = tracker.current_slot_values()['issue_body']
 		issue = {'title': name, 'body': body}
 
-		response = requests.post(API_URL,
+		response = requests.post(API_URL_TESTE,
 		headers = {'Authorization': 'token [PLACE HERE YOUR GITHUB TOKEN]'},
 		data = json.dumps(issue))
 		message = 'New Issue Created \n' + '#'+ str(response.json()["number"]) + ' ' + response.json()["title"] + '\n' + response.json()["body"] + '\n' + response.json()["html_url"]
@@ -53,6 +56,10 @@ class ActionSetIssueName():
 			issue_name = issue_name[6:]
 		elif issue_name.startswith('/name'):
 			issue_name = issue_name[5:]
+		
+		print '========================='
+		print 'Setting issue name to ' + issue_name
+		print '========================='
 
 		return [SlotSet("issue_name", issue_name)]
 
@@ -68,5 +75,9 @@ class ActionSetIssueBody():
 			issue_body = issue_body[6:]
 		elif issue_body.startswith('/body'):
 			issue_body = issue_body[5:]
+
+		print '========================='
+		print 'Setting issue body to ' + issue_body
+		print '========================='
 
 		return [SlotSet("issue_body", issue_body)]

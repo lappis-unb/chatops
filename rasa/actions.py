@@ -1,83 +1,53 @@
 import json
 import requests
+import time
 from rasa_core.actions import Action
 from rasa_core.events import SlotSet
+from rocketchat_py_sdk.driver import Driver
 
-API_URL = "https://api.github.com/repos/lappis-unb/rouana/issues"
-URL = "https://github.com/lappis-unb/rouana"
+bot_username = 'rouana'
+bot_password = 'rouana'
+rocket_url = 'localhost:3000'
+header = None
 
-API_URL_TESTE = "https://api.github.com/repos/gabibguedes/teste/issues"
-URL_TESTE = "https://github.com/gabibguedes/teste"
+class My_bot(object):
+	hello = ''
+	is_online = False
+	livechat_data = None
+def verify_logged(bot, tais):
 
-class ActionListIssues():
+	def get_data(error, data):
+		if error:
+			print((50*'=') + ' ERRO ' + (50 * '='))
+			return
+		tais.livechat_data = data
+		tais.is_online = data['online']
+
+	bot.call('livechat:getInitialData',[bot._login_token], get_data)
+
+def start(bot, tais):
+	bot.connect()
+	bot.login(user=bot_username, password=bot_password)
+	bot.subscribe_to_messages()
+	verify_logged(bot, tais)
+	time.sleep(1)
+	print('----------> Tais logou?')
+	print('----------> ' +str(tais.is_online))
+	print(tais.livechat_data)
+	if tais.is_online:
+		message = 'Tais esta online'
+	else:
+		message = 'Tais esta offline'
+	return message
+
+class ActionTaisOn():
+
 	def name(self):
-		return "action_list_issues"
+		return "action_tais_on"
 
 	def run(self, dispatcher, tracker, domain):
-		response = requests.get(API_URL)
+		tais = My_bot()
+		tais.hello = 'Ola meu nome e Tais'
+		message = start(Driver(url=rocket_url, ssl=False, debug=True), tais)
 
-		api_list = response.json()
-
-		message = 'Open issues on ' + URL + ':\n'
-		for issue in api_list:
-			message += '#' + str(issue['number'])+ " " + issue['title'] + '\n'
-
-		print message
 		dispatcher.utter_message(message)
-
-class ActionCreateIssues():
-	def name(self):
-		return 'action_create_issue'
-
-	def run(self, dispatcher, tracker, domain):
-		print '==============================='
-		print tracker.current_slot_values()
-		print '==============================='
-		name = tracker.current_slot_values()['issue_name']
-		body = tracker.current_slot_values()['issue_body']
-		issue = {'title': name, 'body': body}
-
-		response = requests.post(API_URL_TESTE,
-		headers = {'Authorization': 'token [PLACE HERE YOUR GITHUB TOKEN]'},
-		data = json.dumps(issue))
-		message = 'New Issue Created \n' + '#'+ str(response.json()["number"]) + ' ' + response.json()["title"] + '\n' + response.json()["body"] + '\n' + response.json()["html_url"]
-
-		print message
-		dispatcher.utter_message(message)
-
-class ActionSetIssueName():
-	def name(self):
-		return 'action_set_issue_name'
-
-	def run(self, dispatcher, tracker, domain):
-		issue_name = tracker.latest_message.text
-
-		if issue_name.startswith('/name '):
-			issue_name = issue_name[6:]
-		elif issue_name.startswith('/name'):
-			issue_name = issue_name[5:]
-		
-		print '========================='
-		print 'Setting issue name to ' + issue_name
-		print '========================='
-
-		return [SlotSet("issue_name", issue_name)]
-
-
-class ActionSetIssueBody():
-	def name(self):
-		return 'action_set_issue_body'
-
-	def run(self, dispatcher, tracker, domain):
-		issue_body = tracker.latest_message.text
-
-		if issue_body.startswith('/body '):
-			issue_body = issue_body[6:]
-		elif issue_body.startswith('/body'):
-			issue_body = issue_body[5:]
-
-		print '========================='
-		print 'Setting issue body to ' + issue_body
-		print '========================='
-
-		return [SlotSet("issue_body", issue_body)]

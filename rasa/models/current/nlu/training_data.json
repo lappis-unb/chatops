@@ -2,32 +2,36 @@
   "rasa_nlu_data": {
     "common_examples": [
       {
-        "text": "list issues", 
-        "intent": "list_issues"
+        "text": "Taís online?", 
+        "intent": "tais_on"
       }, 
       {
-        "text": "list", 
-        "intent": "list_issues"
+        "text": "tais está online", 
+        "intent": "tais_on"
       }, 
       {
-        "text": "github", 
-        "intent": "list_issues"
+        "text": "como está a tais", 
+        "intent": "tais_on"
       }, 
       {
-        "text": "git", 
-        "intent": "list_issues"
+        "text": "tais", 
+        "intent": "tais_on"
       }, 
       {
-        "text": "create", 
-        "intent": "create_issue"
+        "text": "online", 
+        "intent": "tais_on"
       }, 
       {
-        "text": "create issue", 
-        "intent": "create_issue"
+        "text": "oi", 
+        "intent": "greet"
       }, 
       {
-        "text": "new issue", 
-        "intent": "create_issue"
+        "text": "Olá", 
+        "intent": "greet"
+      }, 
+      {
+        "text": "ola", 
+        "intent": "greet"
       }, 
       {
         "text": "hey", 
@@ -82,7 +86,23 @@
         "intent": "greet"
       }, 
       {
-        "text": "cu", 
+        "text": "Tchau", 
+        "intent": "goodbye"
+      }, 
+      {
+        "text": "até logo", 
+        "intent": "goodbye"
+      }, 
+      {
+        "text": "namaste", 
+        "intent": "goodbye"
+      }, 
+      {
+        "text": "sayonara", 
+        "intent": "goodbye"
+      }, 
+      {
+        "text": "obrigada", 
         "intent": "goodbye"
       }, 
       {
@@ -124,14 +144,6 @@
       {
         "text": "see you later", 
         "intent": "goodbye"
-      }, 
-      {
-        "text": "/name", 
-        "intent": "answer_name"
-      }, 
-      {
-        "text": "/body", 
-        "intent": "answer_body"
       }
     ], 
     "entity_synonyms": [], 

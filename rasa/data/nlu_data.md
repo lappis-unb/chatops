@@ -1,15 +1,15 @@
-## intent:list_issues
-- list issues
-- list
-- github
-- git
+## intent:tais_on
+- Taís online?
+- tais está online
+- como está a tais
+- tais
+- online
 
-## intent:create_issue
-- create
-- create issue
-- new issue
 
 ## intent:greet
+- oi
+- Olá
+- ola
 - hey
 - hello
 - hi
@@ -25,7 +25,11 @@
 - good afternoon
 
 ## intent:goodbye
-- cu
+- Tchau
+- até logo
+- namaste
+- sayonara
+- obrigada
 - good by
 - cee you later
 - good night
@@ -36,9 +40,3 @@
 - see you around
 - bye bye
 - see you later
-
-## intent:answer_name
-- /name
-
-## intent:answer_body
-- /body

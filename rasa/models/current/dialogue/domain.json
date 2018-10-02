@@ -1,11 +1,8 @@
 {
   "states": [
-    "intent_answer_body", 
-    "intent_answer_name", 
-    "intent_create_issue", 
     "intent_goodbye", 
     "intent_greet", 
-    "intent_list_issues", 
+    "intent_tais_on", 
     "slot_issue_body_0", 
     "slot_issue_name_0", 
     "prev_action_listen", 
@@ -13,11 +10,7 @@
     "prev_action_default_fallback", 
     "prev_utter_greet", 
     "prev_utter_goodbye", 
-    "prev_utter_ask_issue_name", 
-    "prev_utter_ask_issue_body", 
-    "prev_action_list_issues", 
-    "prev_action_create_issue", 
-    "prev_action_set_issue_name", 
-    "prev_action_set_issue_body"
+    "prev_action_tais_on", 
+    "prev_utter_mais"
   ]
 }

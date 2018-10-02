@@ -1,18 +1,15 @@
 {
   "action_fingerprints": {
-    "utter_greet": {
-      "slots": []
-    }, 
     "utter_goodbye": {
       "slots": []
     }, 
-    "action_create_issue": {
-      "slots": []
-    }, 
-    "action_list_issues": {
+    "utter_mais": {
       "slots": []
     }, 
     "action_listen": {
+      "slots": []
+    }, 
+    "utter_greet": {
       "slots": []
     }
   }, 
@@ -25,5 +22,5 @@
     3, 
     3
   ], 
-  "rasa_core": "0.10.2"
+  "rasa_core": "0.10.3"
 }

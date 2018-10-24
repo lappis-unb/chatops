@@ -2,151 +2,68 @@
   "rasa_nlu_data": {
     "common_examples": [
       {
-        "text": "Taís online?", 
-        "intent": "tais_on"
-      }, 
+        "intent": "tais_on",
+        "text": "Taís online?"
+      },
       {
-        "text": "tais está online", 
-        "intent": "tais_on"
-      }, 
+        "intent": "tais_on",
+        "text": "tais está online"
+      },
       {
-        "text": "como está a tais", 
-        "intent": "tais_on"
-      }, 
+        "intent": "tais_on",
+        "text": "como está a tais"
+      },
       {
-        "text": "tais", 
-        "intent": "tais_on"
-      }, 
+        "intent": "tais_on",
+        "text": "tais"
+      },
       {
-        "text": "online", 
-        "intent": "tais_on"
-      }, 
+        "intent": "tais_on",
+        "text": "online"
+      },
       {
-        "text": "oi", 
-        "intent": "greet"
-      }, 
+        "intent": "comprimentar",
+        "text": "oi"
+      },
       {
-        "text": "Olá", 
-        "intent": "greet"
-      }, 
+        "intent": "comprimentar",
+        "text": "Olá"
+      },
       {
-        "text": "ola", 
-        "intent": "greet"
-      }, 
+        "intent": "comprimentar",
+        "text": "ola"
+      },
       {
-        "text": "hey", 
-        "intent": "greet"
-      }, 
+        "intent": "comprimentar",
+        "text": "hey"
+      },
       {
-        "text": "hello", 
-        "intent": "greet"
-      }, 
+        "intent": "comprimentar",
+        "text": "e aí"
+      },
       {
-        "text": "hi", 
-        "intent": "greet"
-      }, 
+        "intent": "goodbye",
+        "text": "Tchau"
+      },
       {
-        "text": "hello there", 
-        "intent": "greet"
-      }, 
+        "intent": "goodbye",
+        "text": "até logo"
+      },
       {
-        "text": "good morning", 
-        "intent": "greet"
-      }, 
+        "intent": "goodbye",
+        "text": "namaste"
+      },
       {
-        "text": "good evening", 
-        "intent": "greet"
-      }, 
+        "intent": "goodbye",
+        "text": "sayonara"
+      },
       {
-        "text": "moin", 
-        "intent": "greet"
-      }, 
-      {
-        "text": "hey there", 
-        "intent": "greet"
-      }, 
-      {
-        "text": "let's go", 
-        "intent": "greet"
-      }, 
-      {
-        "text": "hey dude", 
-        "intent": "greet"
-      }, 
-      {
-        "text": "goodmorning", 
-        "intent": "greet"
-      }, 
-      {
-        "text": "goodevening", 
-        "intent": "greet"
-      }, 
-      {
-        "text": "good afternoon", 
-        "intent": "greet"
-      }, 
-      {
-        "text": "Tchau", 
-        "intent": "goodbye"
-      }, 
-      {
-        "text": "até logo", 
-        "intent": "goodbye"
-      }, 
-      {
-        "text": "namaste", 
-        "intent": "goodbye"
-      }, 
-      {
-        "text": "sayonara", 
-        "intent": "goodbye"
-      }, 
-      {
-        "text": "obrigada", 
-        "intent": "goodbye"
-      }, 
-      {
-        "text": "good by", 
-        "intent": "goodbye"
-      }, 
-      {
-        "text": "cee you later", 
-        "intent": "goodbye"
-      }, 
-      {
-        "text": "good night", 
-        "intent": "goodbye"
-      }, 
-      {
-        "text": "good afternoon", 
-        "intent": "goodbye"
-      }, 
-      {
-        "text": "bye", 
-        "intent": "goodbye"
-      }, 
-      {
-        "text": "goodbye", 
-        "intent": "goodbye"
-      }, 
-      {
-        "text": "have a nice day", 
-        "intent": "goodbye"
-      }, 
-      {
-        "text": "see you around", 
-        "intent": "goodbye"
-      }, 
-      {
-        "text": "bye bye", 
-        "intent": "goodbye"
-      }, 
-      {
-        "text": "see you later", 
-        "intent": "goodbye"
+        "intent": "goodbye",
+        "text": "adeus"
       }
-    ], 
-    "entity_synonyms": [], 
-    "regex_features": []
+    ],
+    "regex_features": [],
+    "lookup_tables": [],
+    "entity_synonyms": []
   }
 }

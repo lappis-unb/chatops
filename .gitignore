@@ -1,3 +1,5 @@
+# Rasa directories
+models/
 # Telegram credentials must be ignored because updating this file is unnecessary
 *telegram_credentials.yml
 

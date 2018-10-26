@@ -2,42 +2,60 @@
 
 Projeto de chatops do LAPPIS para monitoramento do bot Taís.
 
-#### Para rodar o Chatops
- * Entre na pasta rasa
- * Instale o rasa e suas dependencias, em caso de dúvidas, siga o <a href="http://rasa.com/docs/core/installation/">link</a>
- * No terminal, rode o ngrok na porta 5002 pelo seguinte comando:
- ```
- $ ngrok http 5002
- ```
-Para instalar o ngrok siga as instruções do <a href="https://ngrok.com/download">link</a>.
+## Instalação
 
-* Vá ao arquivo telegram_credentials.yml e preencha com as informações corretas do seu bot do telegram. Para criar seu bot abra o telegram e converse com o @BotFather.
-
-* Após essas configurações feitas rode os seguintes comandos:
-```
-$ make train-nlu
-$ make train-core
-$ make run-telegram
+```sh
+pip install -r requirements.txt
 ```
 
-O chatops também pode ser usado pelo terminal, pelos seguintes comandos:
+## Usando Chatops localmente
+
+* Entre na pasta `bot`
+
+```sh
+cd bot/
 ```
-$ make train-nlu
-$ make train-core
-$ make run-bash
+
+* Instale o ngrok utilizando as instruções do <a href="https://ngrok.com/download">link</a>.
+
+* No terminal, rode o ngrok na porta 5002 pelo seguinte comando:
+
+```sh
+ngrok http 5002
 ```
 
-### Funcionalidades do Bot:
+* Vá ao arquivo `telegram_credentials.yml` e preencha com as informações corretas do seu bot do telegram. Para criar seu bot abra o telegram e converse com o @BotFather.
 
-As funcionalidades do chatops se encontram no arquivo actions.py.
+* Execute o servidor de custom actions:
 
-Até o momento o Plodindo somente faz a verificação se a Taís está online. Verifica pela api do livechat do RocketChat, consultando o status do livechat, online ou offline.
+```sh
+make run-actions
+```
 
+* Após essas configurações feitas execute os seguintes comandos:
 
-# Testando Conexão
+```sh
+make train-nlu
+make train-core
+make run-telegram
+```
 
-Pasta para construções de funções para conexão com a API.
+* O chatops também pode ser usado pelo terminal, pelos seguintes comandos:
 
-#### github.py
+```sh
+make train-nlu
+make train-core
+make run-bash
+```
 
-Nesse arquivo foram desenvolvidas as funções para listar issues e criar issues antes de coloca-las no chatops. Para usa-lo coloque o seu token do github no arquivo token.py
+## Funcionalidades do Bot:
+
+As funcionalidades extras do chatops se encontram no arquivo `actions.py`
+
+* Verficação se a Taís está online. 
+
+Verifica pela api do livechat do RocketChat, consultando o status do livechat, online ou offline.
+
+## Referências
+
+[RASA Core 11 and Rasa Core SDK](https://www.youtube.com/watch?v=5gSZ_ZcrbRY&t=578s)

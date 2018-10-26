@@ -1,0 +1,10 @@
+version: '2'
+
+services:
+  plodindo:
+    build: .
+    volumes:
+      - ./rasa/:/bot/
+      - ./connection/:/bot/connection/
+    ports:
+      - 5005:5005

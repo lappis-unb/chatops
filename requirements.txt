@@ -1,0 +1,4 @@
+rasa-core==0.11.11
+sklearn-crfsuite==0.3.6
+spacy==2.0.12
+rocketchat-py-sdk==0.0.8

@@ -7,26 +7,24 @@ slots:
     initial_value: "this is an issue"
 
 intents:
-  - greet
+  - comprimentar
   - tais_on
-  - goodbye
+  - despedir
 
 actions:
-- utter_greet
-- utter_goodbye
-- actions.ActionTaisOn
+- utter_comprimentar
+- utter_despedir
 - utter_mais
+- action_tais_on
 
 templates:
-
-  utter_greet:
+  utter_comprimentar:
   - buttons:
     - payload: Taís online?
       title: Verificar se a Taís está online
     text: Olá, sou o bot de monitoramento da Taís, Plodindo! Posso te ajudar?
 
-
-  utter_goodbye:
+  utter_despedir:
   - text: "Até mais =)"
 
   utter_mais:

@@ -34,3 +34,10 @@ As funcionalidades do chatops se encontram no arquivo actions.py.
 Até o momento o Plodindo somente faz a verificação se a Taís está online. Verifica pela api do livechat do RocketChat, consultando o status do livechat, online ou offline.
 
 
+# Testando Conexão
+
+Pasta para construções de funções para conexão com a API.
+
+#### github.py
+
+Nesse arquivo foram desenvolvidas as funções para listar issues e criar issues antes de coloca-las no chatops. Para usa-lo coloque o seu token do github no arquivo token.py

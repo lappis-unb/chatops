@@ -34,8 +34,11 @@ train-nlu:
 train-core:
 	python -m rasa_core.train -d domain.yml -s data/stories.md -o models/current/dialogue --epochs 200
 
+run-docker:
+	python -m rasa_core.run --enable_api -d models/current/dialogue -u models/current/nlu --endpoints /tmp/endpoints.yml
+
 run-bash:
-	python -m rasa_core.run -d models/current/dialogue -u models/current/nlu --endpoints endpoints.yml
+	python -m rasa_core.run --enable_api -d models/current/dialogue -u models/current/nlu --endpoints endpoints.yml
 
 run-actions:
 	python -m rasa_core_sdk.endpoint --actions actions

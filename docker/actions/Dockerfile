@@ -2,9 +2,10 @@ FROM python:3.6
 
 ADD ./bot/actions.py /actions/
 ADD ./bot/Makefile /actions/
+ADD ./docker/actions/requirements.txt /tmp/
 
 RUN pip install --upgrade pip && \
-    pip install rasa-core-sdk==0.11.5
+    pip install -r /tmp/requirements.txt
 
 WORKDIR actions/
 

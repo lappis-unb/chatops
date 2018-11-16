@@ -2,6 +2,39 @@
 
 Projeto de chatops do LAPPIS para monitoramento do bot Taís.
 
+## Utilizando Docker
+
+* Atualize as variáveis de ambiente no `docker-compose.yml`
+
+* `bot`:
+
+```yml
+- TELEGRAM_ACCESS_TOKEN
+- TELEGRAM_BOT_NAME
+- TELEGRAM_WEBHOOK_URL
+```
+
+* `actions`:
+
+```
+- BOT_USERNAME
+- BOT_PASSWORD
+- BOT_URL
+- BOT_SSL
+```
+
+* Execute o container do `rasa-core-sdk` em background:
+
+```shell
+sudo docker-compose up -d actions
+```
+
+* Execute o container do `plodindo`
+
+```shell
+sudo docker-compose up bot
+```
+
 ## Instalação
 
 ```sh

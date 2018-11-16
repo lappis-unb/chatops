@@ -1,6 +1,6 @@
 ## say hello
-* greet              
-  - utter_greet
+* comprimentar
+  - utter_comprimentar
 
 ## say if online
 * tais_on
@@ -8,5 +8,5 @@
   - utter_mais
 
 ## say goodbye
-* goodbye
-  - utter_goodbye
+* despedir
+  - utter_despedir

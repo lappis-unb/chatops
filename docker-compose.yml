@@ -4,20 +4,33 @@ services:
   bot:
     build:
       context: .
-      dockerfile: ./docker/bot/bot.Dockerfile
+      dockerfile: ./docker/bot.Dockerfile
+    environment:
+      - TELEGRAM_ACCESS_TOKEN
+      - TELEGRAM_BOT_NAME
+      - TELEGRAM_WEBHOOK_URL
     volumes:
       - ./bot/:/bot/
       - ./connections/:/connections/
     ports:
       - 5005:5005
+      - 5002:5002
     depends_on:
       - actions
+    command: "make run-telegram"
 
   actions:
     build:
       context: .
-      dockerfile: ./docker/actions/actions.Dockerfile
+      dockerfile: ./docker/actions.Dockerfile
+    environment:
+      - BOT_USERNAME
+      - BOT_PASSWORD
+      - BOT_URL
+      - BOT_SSL
     ports:
       - 5055:5055
-    voluems:
-      - ./bot/actions/:/bot/actions
+    volumes:
+      - ./bot/actions/:/bot/actions/
+      - ./bot/Makefile:/bot/Makefile
+    command: "make run-actions"

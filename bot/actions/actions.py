@@ -1,20 +1,26 @@
 import json
 import requests
 import time
+import os
 
 from rasa_core_sdk import Action
 from rasa_core.events import SlotSet
 from rocketchat_py_sdk.driver import Driver
 
-bot_username = 'rouana'
-bot_password = 'rouana'
-rocket_url = 'localhost:3000'
+bot_username = os.getenv('BOT_USERNAME', 'bot')
+bot_password = os.getenv('BOT_PASSWORD', 'bot')
+rocket_url = os.getenv('BOT_URL', 'localhost:3000')
+use_ssl = False
+if 'True' in os.getenv('BOT_SSL', 'True'):
+    use_ssl = True
+
 header = None
 
 class My_bot(object):
     hello = ''
     is_online = False
     livechat_data = None
+
 def verify_logged(bot, tais):
 
     def get_data(error, data):
@@ -53,6 +59,6 @@ class ActionTaisOn(Action):
     def run(self, dispatcher, tracker, domain):
         tais = My_bot()
         tais.hello = 'Ola meu nome e Tais'
-        message = start(Driver(url=rocket_url, ssl=False, debug=True), tais)
+        message = start(Driver(url=rocket_url, ssl=use_ssl, debug=True), tais)
 
         dispatcher.utter_message(message)

@@ -1,5 +1,4 @@
 rasa-core==0.12.1
 rasa-core-sdk==0.12.1
 rasa-nlu==0.13.7
-rocketchat-py-sdk==0.0.8
-numpy==1.14.5
+sklearn-crfsuite==0.3.6

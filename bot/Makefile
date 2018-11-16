@@ -8,10 +8,6 @@ train-core:
 	python -m rasa_core.train -d domain.yml -s data/stories.md \
 		-o models/current/dialogue
 
-run-docker:
-	python -m rasa_core.run --enable_api -d models/current/dialogue \
-		-u models/current/nlu --endpoints /tmp/endpoints.yml
-
 run-bash:
 	python -m rasa_core.run --enable_api -d models/current/dialogue \
 		-u models/current/nlu --endpoints endpoints.yml

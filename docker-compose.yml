@@ -1,13 +1,13 @@
 version: '2'
 
 services:
-  plodindo:
+  bot:
     build:
       context: .
-      dockerfile: ./docker/bot/Dockerfile
+      dockerfile: ./docker/bot/bot.Dockerfile
     volumes:
       - ./bot/:/bot/
-      - ./connection/:/bot/connection/
+      - ./connections/:/connections/
     ports:
       - 5005:5005
     depends_on:
@@ -16,6 +16,8 @@ services:
   actions:
     build:
       context: .
-      dockerfile: ./docker/actions/Dockerfile
+      dockerfile: ./docker/actions/actions.Dockerfile
     ports:
       - 5055:5055
+    voluems:
+      - ./bot/actions/:/bot/actions

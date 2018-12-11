@@ -8,9 +8,15 @@ train-core:
 	python -m rasa_core.train -d domain.yml -s data/stories.md \
 		-o models/current/dialogue
 
+train: train-nlu train-core
+
 run-bash:
 	python -m rasa_core.run --enable_api -d models/current/dialogue \
 		-u models/current/nlu --endpoints endpoints.yml
+
+run-api:
+	python -m rasa_core.run --enable_api -d models/current/dialogue \
+		-u models/current/nlu --endpoints endpoints.yml --enable_api
 
 run-actions:
 	python -m rasa_core_sdk.endpoint --actions actions.actions
@@ -19,6 +25,9 @@ run-telegram:
 	python -m rasa_core.run -d models/current/dialogue -u models/current/nlu \
 		--endpoints endpoints.yml --port 5002 \
 		--credentials credentials.yml
+
+run-test:
+	python3 run-telegram.py
 
 
 help:
